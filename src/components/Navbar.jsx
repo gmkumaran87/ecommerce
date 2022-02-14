@@ -27,6 +27,8 @@ const Center = styled.div`
   font-size: 2rem;
   font-weight: 800;
   text-transform: uppercase;
+  display: flex;
+  justify-content: center;
 `;
 const Right = styled.div`
   flex: 1;
