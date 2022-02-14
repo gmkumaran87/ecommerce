@@ -49,7 +49,7 @@ const Button = styled.button`
 `;
 
 const SliderItems = (props) => {
-  const { id, img, title, bg, desc } = props.items;
+  const { img, title, bg, desc } = props.items;
 
   return (
     <Wrapper bg={bg}>

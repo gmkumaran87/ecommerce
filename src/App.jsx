@@ -1,23 +1,10 @@
-import Announcement from "./components/Announcement";
-import Categories from "./components/Categories";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import Newsletter from "./components/Newsletter";
-import Products from "./components/Products";
-import Slider from "./components/Slider";
+import React from "react";
+import Home from "./pages/Home";
+import ProductsList from "./pages/ProductsList";
+import SingleProduct from "./pages/SingleProduct";
 
 function App() {
-  return (
-    <>
-      <Announcement />
-      <Navbar />
-      <Slider />
-      <Categories />
-      <Products />
-      <Newsletter />
-      <Footer />
-    </>
-  );
+  return <SingleProduct />;
 }
 
 export default App;

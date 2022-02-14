@@ -65,8 +65,9 @@ const UList = styled.ul`
 const List = styled.li`
   list-style-type: none;
   margin-left: 1rem;
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
 `;
 const Navbar = () => {
   return (
