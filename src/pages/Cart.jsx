@@ -126,7 +126,6 @@ const Right = styled.div`
     margin: "1rem 0rem",
   })}
 `;
-const PriceContainer = styled.div``;
 const Quantity = styled.div`
   display: flex;
   flex-flow: row nowrap;
