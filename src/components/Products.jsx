@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { popularProducts } from "../data";
+import { mobile } from "../responsive";
 import ProductItems from "./ProductItems";
 
 const Container = styled.div`
@@ -10,7 +11,9 @@ const Container = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
+  gap: 3px;
   /* width: 100vw; */
+  ${mobile({ padding: "10px" })}
 `;
 
 const Products = () => {

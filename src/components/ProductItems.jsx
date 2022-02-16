@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import { mobile } from "../responsive";
 
 const Info = styled.div`
   display: flex;
@@ -41,11 +42,14 @@ const Container = styled.div`
   height: 50vh;
   position: relative;
   margin: 4px;
-  background-color: #f5fbfd;
+  background-color: #d8eef5;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  /* box-shadow: 3px 4px rgba(0, 0, 0, 0.5); */
+  border: 1px solid lightgray
+  ${mobile({ margin: "0px" })}
 
   &:hover ${Info} {
     opacity: 1;
@@ -64,6 +68,7 @@ const Circle = styled.div`
   border-radius: 50%;
   background-color: #fff;
   position: absolute;
+  ${mobile({ width: "250px", height: "250px" })}
 `;
 
 const ProductItems = ({ item }) => {

@@ -5,11 +5,13 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import Products from "../components/Products";
+import { mobile } from "../responsive";
 
 const Wrapper = styled.div`
   display: flex;
   flex-flow: column nowrap;
   padding: 10px 20px;
+  ${mobile({ padding: "10px" })}
 `;
 const Title = styled.h2`
   font-size: 1.5rem;
@@ -23,7 +25,17 @@ const FilterContainer = styled.div`
   flex-flow: row nowrap;
   justify-content: space-between;
 `;
-const Filters = styled.div``;
+const Filters = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  ${mobile({
+    flexFlow: "column nowrap",
+    alignItems: "flex-start",
+    justifyContent: "space-between",
+  })}
+`;
 
 const Span = styled.span`
   font-size: 20px;
@@ -31,8 +43,11 @@ const Span = styled.span`
 `;
 
 const Select = styled.select`
-  padding: 2px 4px;
+  padding: 5px;
   font-family: inherit;
+  margin-left: 0.5rem;
+  border: 2px solid lightgray;
+  ${mobile({ margin: "10px 0px", width: "90%", borderRadius: "0px" })}
 `;
 const Option = styled.option``;
 

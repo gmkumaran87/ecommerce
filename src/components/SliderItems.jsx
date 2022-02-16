@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -19,6 +20,12 @@ const ImageContainer = styled.div`
 const InfoContainer = styled.div`
   flex: 1;
   padding: 3rem;
+  ${mobile({
+    display: "flex",
+    alignItems: "center",
+    flexFlow: "column nowrap",
+    justifyContent: "center",
+  })}
 `;
 
 const Image = styled.img`
@@ -29,6 +36,7 @@ const Image = styled.img`
 
 const Title = styled.h1`
   font-size: 70px;
+  ${mobile({ fontSize: "40px" })}
 `;
 
 const Desc = styled.p`
@@ -36,6 +44,7 @@ const Desc = styled.p`
   margin: 50px 0;
   letter-spacing: 3px;
   font-weight: 600;
+  ${mobile({ fontSize: "15px" })}
 `;
 
 const Button = styled.button`
@@ -46,6 +55,7 @@ const Button = styled.button`
   font-size: 1.2rem;
   font-weight: 600;
   font-family: inherit;
+  ${mobile({ fontSize: "1rem", padding: "10px" })}
 `;
 
 const SliderItems = (props) => {

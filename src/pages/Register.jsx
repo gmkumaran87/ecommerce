@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { mobile } from "../responsive";
 
 const Container = styled.div`
   display: flex;
@@ -23,15 +24,16 @@ const Wrapper = styled.div`
   display: flex;
   flex-flow: column nowrap;
   padding: 20px;
+  ${mobile({ width: "90%" })}
 `;
 
 const Title = styled.h1`
   /* text-align: center; */
   font-size: 1.2rem;
-  font-weight: 400;
+  font-weight: 600;
   font-family: inherit;
-  /* letter-spacing: 2px; */
   margin-bottom: 0.5rem;
+  ${mobile({ fontSize: "1rem" })}
 `;
 const Form = styled.form`
   display: flex;
@@ -46,6 +48,7 @@ const Input = styled.input`
   margin-top: 0.71rem;
   width: 90%;
   border: 1px solid #37373b;
+  ${mobile({ padding: "5px 10px" })}
 `;
 
 const Button = styled.button`
@@ -56,6 +59,7 @@ const Button = styled.button`
   color: #fff;
   margin-top: 1rem;
   width: 30%;
+  ${mobile({ padding: "6px" })}
 `;
 const Agreement = styled.p`
   font-family: inherit;

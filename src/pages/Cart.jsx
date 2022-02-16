@@ -1,9 +1,11 @@
+import { Add, Remove } from "@mui/icons-material";
 import React from "react";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
+import { mobile } from "../responsive";
 
 const Wrapper = styled.div`
   display: flex;
@@ -11,6 +13,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  ${mobile({ padding: "10px", overflowX: "hidden" })}
 `;
 const Title = styled.h2`
   font-size: 1.5rem;
@@ -18,6 +21,7 @@ const Title = styled.h2`
   letter-spacing: 2px;
   font-weight: 600;
   margin-bottom: 1rem;
+  ${mobile({ fontSize: "16px" })}
 `;
 const Top = styled.div`
   display: flex;
@@ -25,6 +29,7 @@ const Top = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  ${mobile({ width: "90%" })}
 `;
 
 const TopButton = styled.button`
@@ -36,6 +41,7 @@ const TopButton = styled.button`
   border: ${(props) => (props.type === "filled" ? "none" : "2px solid teal")};
   color: #${(props) => (props.type === "filled" ? "fff" : "000")};
   font-weight: 600;
+  ${mobile({ padding: "5px", fontSize: ".71rem" })}
 `;
 
 const TopCenter = styled.div``;
@@ -43,6 +49,7 @@ const TopSpan = styled.span`
   text-decoration: underline;
   margin-left: 15px;
   font-family: inherit;
+  ${mobile({ display: "none" })}
 `;
 const Bottom = styled.div`
   width: 100%;
@@ -51,6 +58,7 @@ const Bottom = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
+  ${mobile({ flexFlow: "column nowrap" })}
 `;
 const Products = styled.div`
   flex: 3;
@@ -58,6 +66,11 @@ const Products = styled.div`
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  ${mobile({
+    flexFlow: "column nowrap",
+    justifyContent: "center",
+    alignItems: "flex-start",
+  })}
 `;
 const Left = styled.div`
   flex: 1;
@@ -66,6 +79,7 @@ const Image = styled.img`
   width: 100%;
   height: 90%;
   object-fit: cover;
+  ${mobile({ width: "90%" })}
 `;
 const Center = styled.div`
   flex: 3;
@@ -75,6 +89,7 @@ const Center = styled.div`
   align-items: flex-start;
   padding: 0 10px;
   height: 120px;
+  ${mobile({ width: "90%" })}
 `;
 const ProductDetails = styled.div`
   display: flex;
@@ -82,6 +97,7 @@ const ProductDetails = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin-top: 10px;
+  ${mobile({ flexFlow: "column nowrap" })}
 `;
 
 const Span = styled.span`
@@ -99,7 +115,31 @@ const Color = styled.div`
 
 const Right = styled.div`
   flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  ${mobile({
+    flexFlow: "row nowrap",
+    justifyContent: "space-between",
+    alignItems: "center",
+    margin: "1rem 0rem",
+  })}
 `;
+const PriceContainer = styled.div``;
+const Quantity = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+`;
+const Price = styled.div`
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  ${mobile({ marginTop: "0px" })}
+`;
+
 const Summary = styled.div`
   flex: 1;
   border: 1px solid #949090;
@@ -109,6 +149,7 @@ const Summary = styled.div`
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
+  ${mobile({ width: "100%" })}
 `;
 const SummaryItem = styled.div`
   display: flex;
@@ -161,7 +202,22 @@ const Cart = () => {
               </ProductDetails>
               <Color />
             </Center>
-            <Right></Right>
+            <Right>
+              <Quantity>
+                <Add />
+                <Span
+                  style={{
+                    margin: "4px",
+                    padding: " 2px 4px",
+                    border: "1px solid lightgray",
+                  }}
+                >
+                  2
+                </Span>
+                <Remove />
+              </Quantity>
+              <Price>$30</Price>
+            </Right>
           </Products>
           <Summary>
             <Title

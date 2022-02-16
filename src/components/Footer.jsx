@@ -1,5 +1,5 @@
 import React from "react";
-
+import { mobile } from "../responsive";
 import {
   Twitter,
   Pinterest,
@@ -18,6 +18,7 @@ const Container = styled.div`
   flex-flow: row nowrap;
   width: 100vw;
   /* height: 50vh; */
+  ${mobile({ flexFlow: "column nowrap" })}
 `;
 const Left = styled.div`
   padding: 10px 20px;

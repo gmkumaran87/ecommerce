@@ -7,7 +7,7 @@ import Register from "./pages/Register";
 import SingleProduct from "./pages/SingleProduct";
 
 function App() {
-  return <Cart />;
+  return <Home />;
 }
 
 export default App;

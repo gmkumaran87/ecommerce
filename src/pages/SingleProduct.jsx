@@ -5,11 +5,13 @@ import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import styled from "styled-components";
 import { Add, Remove } from "@mui/icons-material";
+import { mobile } from "../responsive";
 
 const Wrapper = styled.div`
   display: flex;
   flex-flow: row nowrap;
   padding: 10px 20px;
+  ${mobile({ flexFlow: "column nowrap", padding: "10px" })}
 `;
 const Title = styled.h2`
   font-size: 1.5rem;
@@ -26,11 +28,17 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  ${mobile({ height: "40vh" })}
 `;
 
 const InfoContainer = styled.div`
   flex: 1;
   padding: 30px 20px;
+  ${mobile({
+    display: "flex",
+    flexFlow: "column nowrap",
+    alignItems: "flex-start",
+  })}
 `;
 
 const Desc = styled.p`
@@ -38,8 +46,9 @@ const Desc = styled.p`
 `;
 
 const Price = styled.span`
-  font-weight: 300;
+  font-weight: 500;
   font-size: 30px;
+  ${mobile({ fontSize: "1.5rem" })}
 `;
 
 const FilterContainer = styled.div`
@@ -48,6 +57,7 @@ const FilterContainer = styled.div`
   justify-content: space-between;
   margin-top: 1rem;
   width: 70%;
+  ${mobile({ width: "100%" })}
 `;
 const Filters = styled.div`
   display: flex;
@@ -59,6 +69,7 @@ const Filters = styled.div`
 const Span = styled.span`
   font-size: 20px;
   font-weight: 400;
+  ${mobile({ fontSize: "1.2rem" })}
 `;
 const Color = styled.div`
   width: 16px;
@@ -72,6 +83,8 @@ const Select = styled.select`
   padding: 2px;
   font-family: inherit;
   margin-left: 0.5rem;
+  border: 2px solid teal;
+  ${mobile({ fontSize: "1.2rem" })}
 `;
 const Option = styled.option``;
 
@@ -97,12 +110,13 @@ const Quantity = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 4px;
-  padding: 0 5px;
+  /* border-radius: 2px; */
+  padding: 1px 5px;
   margin: 0 5px;
   width: 20px;
-  border: 1px solid teal;
+  border: 2px solid teal;
   font-family: inherit;
+  font-weight: 400;
 `;
 const SingleProduct = () => {
   return (
